@@ -107,6 +107,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export type { BundledLanguage } from "shiki";
 
@@ -382,7 +383,6 @@ export type CodeBlockFilenameProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 export const CodeBlockFilename = ({
-  className,
   icon,
   value,
   children,
@@ -537,9 +537,7 @@ const CodeBlockFallback = ({ children, ...props }: CodeBlockFallbackProps) => (
           ?.toString()
           .split("\n")
           .map((line, i) => (
-            <span className="line" key={i}>
-              {line}
-            </span>
+            <Skeleton key={i} className="h-5 w-full rounded-none" />
           ))}
       </code>
     </pre>
