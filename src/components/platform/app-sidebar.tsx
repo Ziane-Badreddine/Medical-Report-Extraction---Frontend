@@ -1,4 +1,4 @@
-import { FolderPlus, MoreHorizontal } from "lucide-react";
+import { FolderPlus, Library, MoreHorizontal } from "lucide-react";
 
 import {
   Sidebar,
@@ -35,7 +35,7 @@ export function AppSidebar() {
             <SidebarMenuButton tooltip={"Nouveau rapport"} asChild>
               <Link
                 className="flex items-center justify-start"
-                href={"/nouveau"}
+                href={"/parser/new"}
               >
                 <FolderPlus className="size-5" />
                 <span className="align-text-bottom">Nouveau rapport</span>
@@ -47,9 +47,9 @@ export function AppSidebar() {
             <SidebarMenuButton tooltip={"Bibliothèque"} asChild>
               <Link
                 className="flex items-center justify-start"
-                href={"/bibliotheque"}
+                href={"/parser/library"}
               >
-                <FolderPlus className="size-5" />
+                <Library className="size-5" />
                 <span className="align-text-bottom">Bibliothèque</span>
               </Link>
             </SidebarMenuButton>
@@ -66,7 +66,7 @@ export function AppSidebar() {
                 .map((_, id) => (
                   <SidebarMenuItem key={id} className="group/menu-item">
                     <SidebarMenuButton asChild>
-                      <Link className="flex items-center" href={`/id`}>
+                      <Link className="flex items-center" href={`/parser/${id}`}>
                         <span>{id}</span>
                       </Link>
                     </SidebarMenuButton>
@@ -97,11 +97,6 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         <NavUser
-          user={{
-            name: "badr",
-            email: "badr@gmail.com",
-            avatar: "https://github.com/shadcn.png",
-          }}
         />
       </SidebarFooter>
     </Sidebar>

@@ -36,7 +36,7 @@ export default function ParserPage() {
           </EmptyHeader>
 
           <EmptyContent>
-            <Link href={"/parser/nouveau"}>
+            <Link href={"/parser/new"}>
               <Button className=" cursor-pointer">Importer un rapport</Button>
             </Link>
           </EmptyContent>

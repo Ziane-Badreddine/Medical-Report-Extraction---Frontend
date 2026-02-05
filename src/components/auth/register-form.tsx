@@ -9,7 +9,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import Logo from "../shared/logo";
+import Logo from "@/components/shared/logo";
 import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "@/schema/register-schema";
@@ -18,7 +18,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useAuth } from "@/store/auth";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { Spinner } from "../ui/spinner";
+import { Spinner } from "@/components/ui/spinner";
 import { CircleCheck, CircleX } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 

@@ -13,12 +13,12 @@ import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 import { loginSchema } from "@/schema/login-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Logo from "../shared/logo";
+import Logo from "@/components/shared/logo";
 import Link from "next/link";
 import { useAuth } from "@/store/auth";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { Spinner } from "../ui/spinner";
+import { Spinner } from "@/components/ui/spinner";
 
 export function LoginForm({
   className,
@@ -41,8 +41,10 @@ export function LoginForm({
       { ...values },
       {
         onSuccess: (ctx) => {
-          toast.success(ctx.data.message);
-          router.push("/login");
+         if(ctx.data.message){
+           toast.success(ctx.data.message );
+         }
+          router.push("/");
         },
         onError: (ctx) => {
           console.log(ctx.error);

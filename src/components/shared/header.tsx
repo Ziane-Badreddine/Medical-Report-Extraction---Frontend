@@ -1,10 +1,15 @@
+"use client"
+
 import Link from "next/link";
-import * as motion from "motion/react-client";
+import  {motion} from "motion/react"
 
 import { Button } from "../ui/button";
 import Logo from "./logo";
+import { useAuth } from "@/store/auth";
+import UserAvatar from "../auth/user-avatar";
 
 export default function Header() {
+  const {isAuthenticated} = useAuth()
   return (
     <header className=" sticky inset-0 w-full h-16 z-50 px-4 md:px-10 bg-background border-b border-border/40  ">
       <div className=" w-full h-16 flex items-center justify-between">
@@ -16,7 +21,8 @@ export default function Header() {
         </motion.div>
 
         <div className="flex items-center justify-center gap-2">
-          <motion.div
+      {isAuthenticated ? <UserAvatar /> :    <>
+             <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{
               opacity: 1,
@@ -48,7 +54,7 @@ export default function Header() {
                 Créer un compte
               </Button>
             </Link>
-          </motion.div>
+          </motion.div></>}
         </div>
       </div>
     </header>

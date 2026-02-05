@@ -1,10 +1,13 @@
 import { AppSidebar } from "@/components/platform/app-sidebar";
 import { SearchDialog } from "@/components/platform/SearchDialog";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { ProtectedRoute } from "@/providers/ProtectedRoute";
 import { ReactNode } from "react";
 
 export default function PlatformLayout({ children }: { children: ReactNode }) {
   return (
+    <ProtectedRoute>
+
     <SidebarProvider>
       <AppSidebar />
       <SearchDialog />
@@ -14,5 +17,6 @@ export default function PlatformLayout({ children }: { children: ReactNode }) {
       </main>
       ;
     </SidebarProvider>
+    </ProtectedRoute>
   );
 }

@@ -1,11 +1,11 @@
 "use client";
 
-import { UploadIcon } from "lucide-react";
+import { CloudUpload, UploadIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import { createContext, useContext } from "react";
 import type { DropEvent, DropzoneOptions, FileRejection } from "react-dropzone";
 import { useDropzone } from "react-dropzone";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 type DropzoneContextType = {
@@ -81,20 +81,18 @@ export const Dropzone = ({
       key={JSON.stringify(src)}
       value={{ src, accept, maxSize, minSize, maxFiles }}
     >
-      <Button
+      <div
         className={cn(
-          "relative h-auto w-full flex-col overflow-hidden p-8",
+          "relative h-auto w-full flex-col overflow-hidden p-8 border bg-background shadow-xs  dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
           isDragActive && "outline-none ring-1 ring-ring",
+
           className
         )}
-        disabled={disabled}
-        type="button"
-        variant="outline"
         {...getRootProps()}
       >
         <input {...getInputProps()} disabled={disabled} />
         {children}
-      </Button>
+      </div>
     </DropzoneContext.Provider>
   );
 };
@@ -184,9 +182,14 @@ export const DropzoneEmptyState = ({
   }
 
   return (
-    <div className={cn("flex flex-col items-center justify-center", className)}>
-      <div className="flex size-8 items-center justify-center rounded-md bg-muted text-muted-foreground">
-        <UploadIcon size={16} />
+    <div
+      className={cn(
+        "flex flex-col items-center justify-center h-full w-full text-center",
+        className
+      )}
+    >
+      <div className="flex size-10 items-center justify-center rounded-md bg-muted text-muted-foreground">
+        <CloudUpload className="size-6" />
       </div>
       <p className="my-2 w-full truncate text-wrap font-medium text-sm">
         Upload {maxFiles === 1 ? "a file" : "files"}
