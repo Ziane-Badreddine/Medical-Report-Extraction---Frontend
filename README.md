@@ -118,7 +118,7 @@ Créez un fichier `.env.local` à la racine du projet :
 
 ```env
 # API Backend URL
-NEXT_PUBLIC_API_URL=http://localhost:8000/api
+NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
 ```
 
 ### 4. Lancer le serveur de développement
@@ -306,7 +306,7 @@ Créez un fichier `.env.local` :
 
 ```env
 # ===== API Configuration =====
-NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
 
 # ===== Application Configuration =====
 NEXT_PUBLIC_APP_URL=http://localhost:3000
