@@ -32,7 +32,7 @@ import { ReportsListResponse } from "@/types/data";
 
 // fetch all reports
 async function getReports() {
-  const res = await privateApi.get("/api/reports");
+  const res = await privateApi.get("/reports");
   return res.data 
 }
 

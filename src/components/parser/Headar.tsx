@@ -18,7 +18,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 export const fetchReport = async (
   id: string,
 ): Promise<SingleReportResponse> => {
-  const res = await privateApi.get(`/pdf-to-json/reports/${id}`);
+  const res = await privateApi.get(`/reports/${id}`);
   const data = res.data;
   return {
     ...data,

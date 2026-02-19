@@ -89,13 +89,13 @@ export default function DropzonePdf() {
     try {
       setLoading(true);
 
-      const {data} = await privateApi.post("/pdf-to-json/pdf-to-json", formData, {
+      const {data} = await privateApi.post("/reports", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
 
-      const reportId = data.report_id
+      const reportId = data.document_id;
       await  qeuryClient.invalidateQueries({queryKey: ["reports"]})
       router.push(`/parser/${reportId}`)
 

@@ -25,7 +25,7 @@ interface Props {
 export const fetchReport = async (
   id: string,
 ): Promise<SingleReportResponse> => {
-  const res = await privateApi.get(`/pdf-to-json/reports/${id}`);
+  const res = await privateApi.get(`/reports/${id}`);
   return res.data;
 };
 

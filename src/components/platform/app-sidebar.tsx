@@ -37,7 +37,7 @@ import { usePathname } from "next/navigation";
 
 
 async function getReports() {
-  const res = await privateApi.get("/pdf-to-json/reports");
+  const res = await privateApi.get("/reports");
   return res.data;
 }
 
