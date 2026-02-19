@@ -306,7 +306,7 @@ Créez un fichier `.env.local` :
 
 ```env
 # ===== API Configuration =====
-NEXT_PUBLIC_API_URL=http://localhost:8000/api
+NEXT_PUBLIC_API_URL=http://localhost:8000
 
 # ===== Application Configuration =====
 NEXT_PUBLIC_APP_URL=http://localhost:3000
